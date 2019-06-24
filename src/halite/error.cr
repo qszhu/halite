@@ -49,7 +49,7 @@ module Halite
     class APIError < ResponseError
       getter uri
       getter status_code
-      getter status_message
+      getter status_message : String | Nil
 
       def initialize(@message : String? = nil, @status_code : Int32? = nil, @uri : URI? = nil)
         if status_code = @status_code
